@@ -1,5 +1,7 @@
 # SpamMail
-Spam Email BPJS ketenagakerjaan
+Spam Email
+# UPDATE
+- V.2.0 ADD NEW TOOLS SPAM
 # How to install
 $ apt update && apt upgrade -y<br>
 $ pkg install python<br>
