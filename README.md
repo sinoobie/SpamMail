@@ -7,4 +7,4 @@ $ pkg install git<br>
 $ git clone https://github.com/KANG-NEWBIE/SpamMail<br>
 $ pip install requests<br>
 $ cd SpamMail<br>
-$ python mail.py
+$ python main.py
