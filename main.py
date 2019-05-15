@@ -1,29 +1,49 @@
-from os import system as s
+import os,time,sys,shutil
 
-c='\033[1;36m'
-r='\033[1;31m'
-g='\033[1;32m'
-w='\033[1;37m'
-s('clear')
-print("""%s
-			 MENU-MAIN SPAM%s
- ,_     _‚
- |\\\___//|	%sAuthor: KANG-NEWBIE%s
- |=6   6=|	%sContact: https://t.me/kang_nuubi%s
- \=._Y_.=/	%sGithub: https://github.com/KANG-NEWBIE%s
-  )  `  (    ,	%sTEAM: CRABS (t.me/CRABS_ID)%s
- /       \  ((
- |       |   ))
-/| |   | |\_//
-\| |._.| |/-`
- '"'   '"'
-"""%(c,r,g,r,g,r,g,r,g,r))
-print("""%s1. Spam Mail BPJS
-2. Spam Mail Surveyon"""%(g))
-pilih=input("%s[!] Masukan Pilihan =>%s "%(c,w))
-if pilih == '1':
-	s('python mail.py')
-elif pilih == '2':
-	s('python spamemail.py')
-else:
-	exit("%s[!]WRONG INPUT\n"%(r))
+class Main:
+
+	def __init__(self):
+		self.detekos()
+
+	def menu(self):
+		print("""
+		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		;     S P A M  E M A I L    ;
+		;---------------------------;
+		; Author : Kang-newbie      ;
+		; Contact : t.me/kang_nuubi ;
+		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+1. Spam BPJS
+2. Spam OLX
+3. Spam Surveryon
+4. Spam PricePrice
+""")
+		pilih=int(input('/Kang-newbie: '))
+		if pilih == 1:
+			import src.mail
+		elif pilih == 2:
+			import src.olx
+		elif pilih == 3:
+			import src.spamemail
+		elif pilih == 4:
+			import src.price
+		else: print("[!] lihat menu dong(o)");self.menu()
+
+	def detekos(self):
+		#remove cache
+		try:
+			shutil.rmtree("src/__pycache__")
+		except: pass
+
+		if os.name in ['nt','win32']:
+			os.system('cls')
+		else: os.system('clear')
+		self.menu()
+
+try:
+	Main()
+except KeyboardInterrupt:
+	exit('[Exit] Key interrupt')
+except Exception as F:
+	print('Err: %s'%(F))
