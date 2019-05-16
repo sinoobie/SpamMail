@@ -18,6 +18,7 @@ class Main:
 2. Spam OLX
 3. Spam Surveryon
 4. Spam PricePrice
+5. Spam Mediatek
 """)
 		pilih=int(input('/Kang-newbie: '))
 		if pilih == 1:
@@ -28,6 +29,8 @@ class Main:
 			import src.spamemail
 		elif pilih == 4:
 			import src.price
+		elif pilih == 5:
+			import src.mediatek
 		else: print("[!] lihat menu dong(o)");self.menu()
 
 	def detekos(self):
